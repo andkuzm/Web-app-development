@@ -11,21 +11,21 @@
     margin-right: 20px;
     text-decoration: none;
     font-size: 18px;
-    color: #333;
+    text-decoration-color: #333;
 }
 
-#navBar img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
+/*#navBar img {*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    border-radius: 50%;*/
+/*}*/
 #addPostBody {
     margin: 50px auto;
     width: 300px;
     background-color: #e6e6e6;
     padding: 45px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #postBodyArea, #selectFileArea {
@@ -73,8 +73,8 @@
 .nav-link {
     padding: 10px;
     color: black;
-    text-decoration: none; 
+    text-decoration: none;
 }
 .nav-link:hover {
-    color: rgb(25, 0, 255); 
+    color: rgb(39, 21, 201);
 }
