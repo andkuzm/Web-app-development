@@ -74,3 +74,8 @@
     color: rgb(0, 0, 0);
     margin-left: auto;
 }
+.post-number {
+    font-size: 16px;
+    color: #000000;
+    margin-right: 10px;
+}
