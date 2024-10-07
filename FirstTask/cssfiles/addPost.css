@@ -17,6 +17,7 @@
 /* Pseudo-class */
 .nav-link:hover {
     color: rgb(39, 21, 201);
+    background-color: #5d5f5d;
 }
 
 /* Descendant Selector */

@@ -63,11 +63,12 @@
 .nav-link {
     padding: 10px;
     color: black;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .nav-link:hover {
-    color: rgb(25, 0, 255); 
+    color: rgb(25, 0, 255);
+    background-color: #5d5f5d;
 }
 .post-date {
     font-size: 14px;

@@ -71,4 +71,5 @@
 /* Pseudo-class */
 .nav-link:hover {
     color: rgb(25, 0, 255);
+    background-color: #5d5f5d;
 }
