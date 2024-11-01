@@ -17,80 +17,75 @@
             <img alt="login picture" src="relatedFiles/loginPic.png" class="image">
         </a>
     </div>
+
     <div id="postsFeed">
-
-        <div class="post">
-            <div class="postUpperBar">
-                <p class="post-number">1.</p>
-                <img alt="userPic" src="relatedFiles/loginPic.png"/>
-                <p class="post-date">Oct 22, 2022</p>
-            </div>
-            <div class="postBody">
-                <img alt="postImg" class="postImg" src="relatedFiles/tartu-old-city.jpg"/>
-                <p class="postText">Tartu 2024 </p>
-            </div>
-            <button class="likeButton">
-                <img class="likeButtonImage" alt="like" src="relatedFiles/likeButton.png"/>
-            </button>
-        </div>
-
-        <div class="post">
-            <div class="postUpperBar">
-                <p class="post-number">2.</p>
-                <img alt="userPic" src="relatedFiles/loginPic.png"/>
-                <p class="post-date">Oct 22, 2022</p>
-            </div>
-            <div class="postBody">
-                <p class="postText">Anyone knows when is the next lab assessment?</p>
-            </div>
-            <button class="likeButton">
-                <img class="likeButtonImage" alt="like" src="relatedFiles/likeButton.png"/>
-            </button>
-        </div>
-
-        <div class="post">
-            <div class="postUpperBar">
-                <p class="post-number">3.</p>
-                <img alt="userPic" src="relatedFiles/loginPic.png"/>
-                <p class="post-date">Oct 22, 2022</p>
-            </div>
-            <div class="postBody">
-                <p class="postText">It is supposed to be next week on Monday.</p>
-            </div>
-            <button class="likeButton">
-                <img class="likeButtonImage" alt="like" src="relatedFiles/likeButton.png"/>
-            </button>
-        </div>
-
-        <div class="post">
-            <div class="postUpperBar">
-                <p class="post-number">4.</p>
-                <img alt="userPic" src="relatedFiles/loginPic.png"/>
-                <p class="post-date">Oct 22, 2022</p>
-            </div>
-            <div class="postBody">
-                <p class="postText">Okay, thank you</p>
-            </div>
-            <button class="likeButton">
-                <img class="likeButtonImage" alt="like" src="relatedFiles/likeButton.png"/>
-            </button>
-        </div>
-
-        <div class="post">
-            <div class="postUpperBar">
-                <p class="post-number">5.</p>
-                <img alt="userPic" src="relatedFiles/loginPic.png"/>
-                <p class="post-date">Oct 22, 2022</p>
-            </div>
-            <div class="postBody">
-                <p class="postText">I was wrong, the deadline is tommorrow</p>
-            </div>
-            <button onclick="console.log('like clicked')" class="likeButton">
-                <img class="likeButtonImage" alt="like" src="relatedFiles/likeButton.png"/>
-            </button>
-        </div>
-
     </div>
+    <script>
+        // let req = new XMLHttpRequest(); //Distant fetching
+        // req.open("GET", "https://api.jsonbin.io/v3/b/67242706acd3cb34a8a05902/latest", true);
+        // req.setRequestHeader("X-Access-Key", "$2a$10$lcMO8gVgvekT6UGc0z0PROJYo5ryRggZXXATDxuu0F/.ILMPHBAOq");
+        // req.send();
+        // req.onreadystatechange = () => {
+        //     if (req.readyState === 4) {
+        //         const responseData = JSON.parse(req.responseText);
+        //         const posts = responseData.record.posts;
+        //         const postsContainer = document.getElementById("postsFeed");
+        //
+        //         for (const postKey in posts) {
+        //             const post = posts[postKey];
+        //
+        //             const postDiv = document.createElement("div");
+        //             postDiv.classList.add("post");
+        //
+        //             const upperBarDiv = document.createElement("div");
+        //             upperBarDiv.classList.add("postUpperBar");
+        //
+        //             const accountImage = document.createElement("img");
+        //             accountImage.src = post.accountImage;
+        //             accountImage.alt = "userPic";
+        //             upperBarDiv.appendChild(accountImage);
+        //
+        //             const postDate = document.createElement("p");
+        //             postDate.classList.add("post-date");
+        //             postDate.innerText = post.date;
+        //             upperBarDiv.appendChild(postDate);
+        //
+        //             postDiv.appendChild(upperBarDiv);
+        //
+        //             const postBodyDiv = document.createElement("div");
+        //             postBodyDiv.classList.add("postBody");
+        //
+        //             const postText = document.createElement("p");
+        //             postText.classList.add("postText");
+        //             postText.innerText = post.postText;
+        //             postBodyDiv.appendChild(postText);
+        //
+        //             if (post.postImage) {
+        //                 const postImage = document.createElement("img");
+        //                 postImage.src = post.postImage;
+        //                 postImage.alt = "post image";
+        //                 postBodyDiv.appendChild(postImage);
+        //             }
+        //
+        //             postDiv.appendChild(postBodyDiv);
+        //
+        //             const likeButton = document.createElement("button");
+        //             likeButton.classList.add("likeButton");
+        //
+        //             const likeButtonImage = document.createElement("img");
+        //             likeButtonImage.classList.add("likeButtonImage");
+        //             likeButtonImage.alt = "like";
+        //             likeButtonImage.src = "relatedFiles/likeButton.png";
+        //             likeButton.appendChild(likeButtonImage);
+        //
+        //             postDiv.appendChild(likeButton);
+        //
+        //             postsContainer.appendChild(postDiv);
+        //
+        //         }
+        //     }
+        // };
+    </script>
     <div id="footer"></div>
 </body>
 </html>
