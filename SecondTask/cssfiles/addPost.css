@@ -1,0 +1,104 @@
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #a3a2a28a;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Class Selector */
+.nav-link {
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Pseudo-class */
+.nav-link:hover {
+    color: rgb(39, 21, 201);
+    background-color: #5d5f5d;
+}
+
+/* Descendant Selector */
+#navBar .nav-link {
+    margin-right: 20px;
+}
+
+/* Child Selector */
+#addPostBody > .addPostText {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Adjacent Sibling Selector */
+.addPostText + #bodyTextArea {
+    margin-top: 5px;
+}
+
+/* General Sibling Selector */
+.addPostText ~ #selectFileArea {
+    margin-bottom: 30px;
+}
+
+#homeNavBarLink {
+    text-decoration: none;
+    font-size: 18px;
+    text-decoration-color: #333;
+}
+
+#addPostBody {
+    margin: 50px auto;
+    width: 300px;
+    background-color: #e6e6e6;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#postBodyArea,
+#selectFileArea {
+    margin-bottom: 30px;
+}
+
+.addPostText,
+.addFileText {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#bodyTextArea {
+    width: 90%;
+    padding: 30px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    resize: none;
+}
+
+#addFileButton {
+    background-color: #5d5f5d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#createPostButton {
+    width: 90%;
+    padding: 10px;
+    background-color: #164482;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.image {
+    width: 60px;
+    height: 55px;
+}
+

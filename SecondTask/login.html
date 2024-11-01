@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cssfiles/login.css">
+    <meta charset="UTF-8">
+    <title>postsTab</title>
+</head>
+<body>
+    <div id="navBar">
+        <div id="home|addPost-Bar">
+            <a href="index.html" id="homeNavBarLink" class="nav-link">Home</a>
+        </div>
+        <a href="login.html">
+            <img alt="login picture" src="relatedFiles/loginPic.png" class="image">
+        </a>
+    </div>
+
+    <div id="loginBody">
+        <h2 id="loginWelcomeText">Welcome to PostIt</h2>
+        <br/>
+        <p class="loginBlueText">Create an account</p>
+        <p class="loginNormalText">or</p>
+        <p class="loginNormalText">Please log in</p>
+        <form onsubmit="event.preventDefault(); window.location.href = 'index.html'">
+            <input required aria-label="mail" type="email" placeholder="Email" class="loginTextArea" id="loginFirstArea">
+            <input required aria-label="password" type="password" placeholder="Password" class="loginTextArea" id="loginSecondArea">
+            <input id="logInButton" type="submit" value="Log in">
+        </form>
+        <p class="loginBlueText">Forget password</p>
+    </div>
+</body>
+</html>
