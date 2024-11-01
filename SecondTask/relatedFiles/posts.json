@@ -1,0 +1,64 @@
+{
+  "posts": {
+    "post0": {
+      "accountImage": "https://images.ctfassets.net/hrltx12pl8hq/3Mz6t2p2yHYqZcIM0ic9E2/3b7037fe8871187415500fb9202608f7/Man-Stock-Photos.jpg",
+      "date": "oct 29, 2022",
+      "postImage": "https://elearningchips.com/wp-content/uploads/2017/02/ph_024_043_pw1.jpg",
+      "postText": "text0"
+    },
+    "post1": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 28, 2022",
+      "postImage": null,
+      "postText": "text1"
+    },
+    "post2": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 27, 2022",
+      "postImage": null,
+      "postText": "text2"
+    },
+    "post3": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 26, 2022",
+      "postImage": null,
+      "postText": "text3"
+    },
+    "post4": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 25, 2022",
+      "postImage": null,
+      "postText": "text4"
+    },
+    "post5": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 24, 2022",
+      "postImage": null,
+      "postText": "text5"
+    },
+    "post6": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 23, 2022",
+      "postImage": null,
+      "postText": "text6"
+    },
+    "post7": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 22, 2022",
+      "postImage": null,
+      "postText": "text7"
+    },
+    "post8": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 21, 2022",
+      "postImage": null,
+      "postText": "text8"
+    },
+    "post9": {
+      "accountImage": "https://i.pinimg.com/474x/56/c5/29/56c529e5314666bbb71b8cd468c01f78.jpg",
+      "date": "oct 20, 2022",
+      "postImage": null,
+      "postText": "text9"
+    }
+  }
+}
