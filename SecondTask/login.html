@@ -26,6 +26,17 @@
             <input required aria-label="password" type="password" placeholder="Password" class="loginTextArea" id="loginSecondArea">
             <input id="logInButton" type="submit" value="Log in">
         </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('loginFirstArea').value;
+                const userName = "username"; 
+                localStorage.setItem('userName', userName);
+                localStorage.setItem('userEmail', email);
+                window.location.href = 'index.html';
+            });
+        </script>
+        
         <p class="loginBlueText">Forget password</p>
     </div>
 </body>
