@@ -45,46 +45,50 @@
         }
         function displayPosts(posts) {
             const postsContainer = document.getElementById("postsFeed");
+            console.log();
+            for (let key in posts) {
+                if (posts.hasOwnProperty(key)) {
+                    let post = posts[key];
+                    const postDiv = document.createElement("div");
+                    postDiv.classList.add("post");
 
-            posts.forEach(post => {
-                const postDiv = document.createElement("div");
-                postDiv.classList.add("post");
+                    const upperBarDiv = document.createElement("div");
+                    upperBarDiv.classList.add("postUpperBar");
 
-                const upperBarDiv = document.createElement("div");
-                upperBarDiv.classList.add("postUpperBar");
+                    const accountImage = document.createElement("img");
+                    accountImage.src = post.accountImage;
+                    accountImage.alt = "User Image";
+                    upperBarDiv.appendChild(accountImage);
 
-                const accountImage = document.createElement("img");
-                accountImage.src = post.accountImage;
-                accountImage.alt = "User Image";
-                upperBarDiv.appendChild(accountImage);
+                    const postDate = document.createElement("p");
+                    postDate.classList.add("post-date");
+                    postDate.innerText = post.date;
+                    upperBarDiv.appendChild(postDate);
 
-                const postDate = document.createElement("p");
-                postDate.classList.add("post-date");
-                postDate.innerText = post.date;
-                upperBarDiv.appendChild(postDate);
+                    postDiv.appendChild(upperBarDiv);
+                    const postBodyDiv = document.createElement("div");
+                    postBodyDiv.classList.add("postBody");
 
-                postDiv.appendChild(upperBarDiv);
-                const postBodyDiv = document.createElement("div");
-                postBodyDiv.classList.add("postBody");
+                    const postText = document.createElement("p");
+                    postText.classList.add("postText");
+                    postText.innerText = post.postText;
+                    postBodyDiv.appendChild(postText);
 
-                const postText = document.createElement("p");
-                postText.classList.add("postText");
-                postText.innerText = post.postText;
-                postBodyDiv.appendChild(postText);
+                    if (post.postImage) {
+                        const postImage = document.createElement("img");
+                        postImage.src = post.postImage;
+                        postImage.alt = "Post Image";
+                        postBodyDiv.appendChild(postImage);
+                    }
 
-                if (post.postImage) {
-                    const postImage = document.createElement("img");
-                    postImage.src = post.postImage;
-                    postImage.alt = "Post Image";
-                    postBodyDiv.appendChild(postImage);
+                    postDiv.appendChild(postBodyDiv);
+                    postsContainer.appendChild(postDiv);
                 }
-
-                postDiv.appendChild(postBodyDiv);
-                postsContainer.appendChild(postDiv);
-            });
+            }
         }
 
-        fetch('./relatedFiles/posts.json') 
+
+        fetch('./relatedFiles/posts.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText);
@@ -92,11 +96,13 @@
                 return response.json();
             })
             .then(data => {
-                console.log(data.posts);
                 displayPosts(data.posts);
             })
             .catch(error => console.error(error));
-               // let req = new XMLHttpRequest(); //Distant fetching
+
+
+
+        // let req = new XMLHttpRequest(); //Distant fetching
         // req.open("GET", "https://api.jsonbin.io/v3/b/67242706acd3cb34a8a05902/latest", true);
         // req.setRequestHeader("X-Access-Key", "$2a$10$lcMO8gVgvekT6UGc0z0PROJYo5ryRggZXXATDxuu0F/.ILMPHBAOq");
         // req.send();
