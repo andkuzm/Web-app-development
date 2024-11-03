@@ -10,9 +10,15 @@
         <div id="home|addPost-Bar">
             <a href="index.html" id="homeNavBarLink" class="nav-link">Home</a>
         </div>
-        <a href="login.html">
-            <img alt="login picture" src="relatedFiles/loginPic.png" class="image">
-        </a>
+        <div id="userProfile" style="position: relative;">
+            <img id="profileIcon" alt="login picture" src="relatedFiles/loginPic.png" class="image" onclick="toggleDropdown()">
+            <div id="userDropdown" class="dropdown-content" style="display: none;">
+                <p id="userName"></p>
+                <p id="userEmail"></p>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
     </div>
     <div id="addPostBody">
         <div id="postBodyArea">
@@ -29,5 +35,24 @@
             </button>
         </a>
     </div>
+    <script>
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+        if (userName && userEmail) {
+            document.getElementById('userName').innerText = userName;
+            document.getElementById('userEmail').innerText = userEmail;
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("userDropdown");
+            dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+        }
+
+        function logout() {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        }
+        </script>
 </body>
 </html>
