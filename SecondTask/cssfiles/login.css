@@ -73,3 +73,10 @@
     color: rgb(25, 0, 255);
     background-color: #5d5f5d;
 }
+
+.dropdown-content button {
+     background-color: #04AA6D;
+     color: white;
+     padding: 10px;
+     border: none;
+ }
