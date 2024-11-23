@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cssfiles/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>postsTab</title>
+</head>
+<body>
+    <div id="header">
+        <div id="navBar">
+            <div id="navLinksBlock" style="cursor: default">
+                <a href="index.html" id="homeNavBarLink" class="nav-link">Home</a>
+                <span id="linksNavBarSeparator" style="cursor: inherit">|</span>
+                <a href="signUp.html" id="signUp" class="nav-link">Sign up</a>
+            </div>
+        </div>
+    </div>
+    <div id="postsFeed"></div>
+
+    <script>
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+        if (userName && userEmail) {
+            document.getElementById('userName').innerText = userName;
+            document.getElementById('userEmail').innerText = userEmail;
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("userDropdown");
+            dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+        }
+
+        function logout() {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        }
+        function displayPosts(posts) {
+            const postsContainer = document.getElementById("postsFeed");
+            console.log();
+            for (let key in posts) {
+                if (posts.hasOwnProperty(key)) {
+                    let post = posts[key];
+                    const postDiv = document.createElement("div");
+                    postDiv.classList.add("post");
+
+                    const upperBarDiv = document.createElement("div");
+                    upperBarDiv.classList.add("postUpperBar");
+
+                    const accountImage = document.createElement("img");
+                    accountImage.src = post.accountImage;
+                    accountImage.alt = "User Image";
+                    upperBarDiv.appendChild(accountImage);
+
+                    const postDate = document.createElement("p");
+                    postDate.classList.add("post-date");
+                    postDate.innerText = post.date;
+                    upperBarDiv.appendChild(postDate);
+
+                    postDiv.appendChild(upperBarDiv);
+                    const postBodyDiv = document.createElement("div");
+                    postBodyDiv.classList.add("postBody");
+
+                    const postText = document.createElement("p");
+                    postText.classList.add("postText");
+                    postText.innerText = post.postText;
+                    postBodyDiv.appendChild(postText);
+
+                    if (post.postImage) {
+                        const postImage = document.createElement("img");
+                        postImage.src = post.postImage;
+                        postImage.alt = "Post Image";
+                        postBodyDiv.appendChild(postImage);
+                    }
+
+                    postDiv.appendChild(postBodyDiv);
+                    postsContainer.appendChild(postDiv);
+                }
+            }
+        }
+
+
+        fetch('./relatedFiles/posts.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayPosts(data.posts);
+            })
+            .catch(error => console.error(error));
+
+
+
+        // let req = new XMLHttpRequest(); //Distant fetching
+        // req.open("GET", "https://api.jsonbin.io/v3/b/67242706acd3cb34a8a05902/latest", true);
+        // req.setRequestHeader("X-Access-Key", "$2a$10$lcMO8gVgvekT6UGc0z0PROJYo5ryRggZXXATDxuu0F/.ILMPHBAOq");
+        // req.send();
+        // req.onreadystatechange = () => {
+        //     if (req.readyState === 4) {
+        //         const responseData = JSON.parse(req.responseText);
+        //         const posts = responseData.record.posts;
+        //         const postsContainer = document.getElementById("postsFeed");
+        //
+        //         for (const postKey in posts) {
+        //             const post = posts[postKey];
+        //
+        //             const postDiv = document.createElement("div");
+        //             postDiv.classList.add("post");
+        //
+        //             const upperBarDiv = document.createElement("div");
+        //             upperBarDiv.classList.add("postUpperBar");
+        //
+        //             const accountImage = document.createElement("img");
+        //             accountImage.src = post.accountImage;
+        //             accountImage.alt = "userPic";
+        //             upperBarDiv.appendChild(accountImage);
+        //
+        //             const postDate = document.createElement("p");
+        //             postDate.classList.add("post-date");
+        //             postDate.innerText = post.date;
+        //             upperBarDiv.appendChild(postDate);
+        //
+        //             postDiv.appendChild(upperBarDiv);
+        //
+        //             const postBodyDiv = document.createElement("div");
+        //             postBodyDiv.classList.add("postBody");
+        //
+        //             const postText = document.createElement("p");
+        //             postText.classList.add("postText");
+        //             postText.innerText = post.postText;
+        //             postBodyDiv.appendChild(postText);
+        //
+        //             if (post.postImage) {
+        //                 const postImage = document.createElement("img");
+        //                 postImage.src = post.postImage;
+        //                 postImage.alt = "post image";
+        //                 postBodyDiv.appendChild(postImage);
+        //             }
+        //
+        //             postDiv.appendChild(postBodyDiv);
+        //
+        //             const likeButton = document.createElement("button");
+        //             likeButton.classList.add("likeButton");
+        //
+        //             const likeButtonImage = document.createElement("img");
+        //             likeButtonImage.classList.add("likeButtonImage");
+        //             likeButtonImage.alt = "like";
+        //             likeButtonImage.src = "relatedFiles/likeButton.png";
+        //             likeButton.appendChild(likeButtonImage);
+        //
+        //             postDiv.appendChild(likeButton);
+        //
+        //             postsContainer.appendChild(postDiv);
+        //
+        //         }
+        //     }
+        // };
+    </script>
+    <div id="footer" style="padding: 10px; justify-content: center; display: flex; color: #5d5f5d">
+        default copyright text
+    </div>
+</body>
+</html>

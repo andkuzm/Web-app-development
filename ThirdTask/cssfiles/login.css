@@ -1,0 +1,93 @@
+/* ID selector */
+#navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #a3a2a28a;
+    border-bottom: 2px solid #ffffff;
+}
+/*Descendant Selector*/
+#loginBody .loginTextArea {
+    font-size: 13px;
+}
+#loginBody {
+    width: 300px;
+    margin: 50px auto;
+    background-color: #e0dfdf;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/*Child Selector*/
+#loginBody > h2 {
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+#loginWelcomeText {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+/* Class Selector */
+.loginTextArea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/*Adjacent Sibling Selector */
+.loginTextArea + #logInButton {
+    margin-top: 5px;
+}
+
+#logInButton {
+    background-color: #17447e;
+    color: white;
+    padding: 10px;
+    width: 70%;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#footer{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: #5d5f5d;
+    cursor: default;
+}
+
+.loginBlueText {
+    color: #4a9cff;
+    cursor: pointer;
+}
+
+.image {
+    width: 60px;
+    height: 55px;
+}
+.nav-link {
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: rgb(44, 44, 44);
+    background-color: #a1a1a1;
+}
+
+.dropdown-content button {
+     background-color: #04AA6D;
+     color: white;
+     padding: 10px;
+     border: none;
+    width: 100%;
+ }

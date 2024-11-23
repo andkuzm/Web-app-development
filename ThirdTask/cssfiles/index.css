@@ -1,0 +1,109 @@
+#navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #a3a2a28a;
+    border-bottom: 2px solid #ffffff;
+}
+#footer{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: #5d5f5d;
+    cursor: default;
+}
+#postsFeed {
+    width: 500px;
+    margin: 50px auto;
+}
+
+.post {
+    background-color: #d7d8d8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.postUpperBar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.postUpperBar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.postBody img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.postText {
+    font-size: 14px;
+    color: #333;
+}
+
+.likeButton {
+    background-color: #d7d8d8;
+    border: none;
+    cursor: pointer;
+}
+
+.likeButtonImage {
+    width: 25px;
+    height: 25px;
+}
+
+.image {
+    width: 60px;
+    height: 55px;
+}
+
+.nav-link {
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: rgb(44, 44, 44);
+    background-color: #a1a1a1;
+}
+.post-date {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    margin-left: auto;
+}
+.post-number {
+    font-size: 16px;
+    color: #000000;
+    margin-right: 10px;
+}
+.dropdown-content {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dropdown-content button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}

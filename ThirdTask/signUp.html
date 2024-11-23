@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="cssfiles/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>postsTab</title>
+</head>
+<body>
+    <div id="header">
+        <div id="navBar">
+            <div id="navLinksBlock" style="cursor: default">
+                <a href="index.html" id="homeNavBarLink" class="nav-link">Home</a>
+                <span id="linksNavBarSeparator" style="cursor: inherit">|</span>
+                <a href="signUp.html" id="signUp" class="nav-link">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginBody">
+        <p class="loginNormalText">Please sign up</p>
+        <form onsubmit="event.preventDefault(); window.location.href = 'index.html'">
+            <input required aria-label="mail" type="email" placeholder="Email" class="loginTextArea" id="loginFirstArea">
+            <input required aria-label="password" type="password" placeholder="Password" class="loginTextArea" id="loginSecondArea">
+            <input id="logInButton" type="submit" value="Sign up">
+        </form>
+        <script>
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const email = document.getElementById('loginFirstArea').value;
+                const userName = "username"; 
+                localStorage.setItem('userName', userName);
+                localStorage.setItem('userEmail', email);
+                window.location.href = 'index.html';
+            });
+        </script>
+    </div>
+    <div id="footer">
+        default copyright text
+    </div>
+</body>
+</html>
