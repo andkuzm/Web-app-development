@@ -74,23 +74,20 @@ const store = new Vuex.Store({
         },
     },
     mutations: {
-        // Generic update for post
         updatePost(state, { postId, postData }) {
             if (state.posts[postId]) {
                 state.posts[postId] = { ...state.posts[postId], ...postData };
             }
         },
-        // Increment likes for a specific post
         incrementLikes(state, postId) {
+            console.log("attempting to like")
             if (state.posts[postId]) {
                 state.posts[postId].likes += 1;
+                console.log(state.posts[postId].likes);
             }
         },
-        // Decrement likes for a specific post
-        decrementLikes(state, postId) {
-            if (state.posts[postId] && state.posts[postId].likes > 0) {
-                state.posts[postId].likes -= 1;
-            }
+        resetLikes(state) {
+            Object.values(state.posts).forEach(post => post.likes = 0);
         },
     },
     actions: {

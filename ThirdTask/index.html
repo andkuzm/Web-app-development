@@ -20,7 +20,7 @@
     </div>
 
     <div id="mainContent">
-        <button id="resetLikesButton" onclick="resetLikes()">Reset Likes</button>
+        <button id="resetLikesButton">Reset Likes</button>
         <div id="postsFeed"></div>
     </div>
 
@@ -81,10 +81,10 @@
 
                     const likeCount = document.createElement("span");
                     likeCount.classList.add("likeCount");
-                    likeCount.innerText = `${post.likes || 0} likes`;
+                    likeCount.innerText = `${post.likes} likes`;
 
                     likeButton.addEventListener("click", () => {
-                        post.likes += 1;
+                        store.commit("incrementLikes", key);
                         likeCount.innerText = `${post.likes} likes`;
                     });
 
