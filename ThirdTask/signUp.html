@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="cssfiles/login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>postsTab</title>
+    <title>Sign Up</title>
 </head>
 <body>
     <div id="header">
@@ -19,19 +19,48 @@
 
     <div id="loginBody">
         <p class="loginNormalText">Please sign up</p>
-        <form onsubmit="event.preventDefault(); window.location.href = 'index.html'">
+        <form id="signupForm">
             <input required aria-label="mail" type="email" placeholder="Email" class="loginTextArea" id="loginFirstArea">
             <input required aria-label="password" type="password" placeholder="Password" class="loginTextArea" id="loginSecondArea">
+            <div id="errorMessage" style="color: red; margin-top: 5px;"></div>
             <input id="logInButton" type="submit" value="Sign up">
         </form>
         <script>
-            document.querySelector('form').addEventListener('submit', function (event) {
+            document.querySelector('#signupForm').addEventListener('submit', function (event) {
                 event.preventDefault();
+
                 const email = document.getElementById('loginFirstArea').value;
-                const userName = "username"; 
-                localStorage.setItem('userName', userName);
-                localStorage.setItem('userEmail', email);
-                window.location.href = 'index.html';
+                const password = document.getElementById('loginSecondArea').value;
+                const errorMessage = document.getElementById('errorMessage');
+
+                const errors = [];
+                if (password.length < 8 || password.length >= 15) {
+                    errors.push('Password should be between 8 and 15 characters long');
+                }
+                if (!/^[A-Z]/.test(password)) {
+                    errors.push('Password should start with an uppercase letter');
+                }
+                if (!/[A-Z]/.test(password)) {
+                    errors.push('Password should include at least one uppercase alphabet character');
+                }
+                if ((password.match(/[a-z]/g) || []).length < 2) {
+                    errors.push('Password should include at least two lowercase alphabet characters');
+                }
+                if (!/\d/.test(password)) {
+                    errors.push('Password should include at least one numeric value');
+                }
+                if (!/_/.test(password)) {
+                    errors.push('Password should include the character "_"');
+                }
+                if (errors.length > 0) {
+                    errorMessage.innerText = `The password is not valid - ${errors.join(', ')}`;
+                } else {
+                    errorMessage.innerText = ''; 
+                    const userName = "username"; 
+                    localStorage.setItem('userName', userName);
+                    localStorage.setItem('userEmail', email);
+                    window.location.href = 'index.html'; 
+                }
             });
         </script>
     </div>
