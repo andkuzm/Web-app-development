@@ -7,6 +7,7 @@
     <title>postsTab</title>
     <script src="relatedFiles/vueFiles/vue.global.js"></script>
     <script src="relatedFiles/vueFiles/vuex.global.js"></script>
+    <script src="relatedFiles/vueFiles/vuex-persistedstate.umd.js"></script>
 </head>
 <body>
     <div id="header">
@@ -21,7 +22,22 @@
 
     <div id="mainContent">
         <button id="resetLikesButton">Reset Likes</button>
-        <div id="postsFeed"></div>
+        <div id="postsFeed">
+            <div v-for="(post, postId) in posts" :key="postId" class="post">
+                <div class="postUpperBar">
+                    <img :src="post.accountImage" alt="User Image" />
+                    <p class="post-date">{{ post.date }}</p>
+                </div>
+                <div class="postBody">
+                    <p class="postText">{{ post.postText }}</p>
+                    <img v-if="post.postImage" :src="post.postImage" alt="Post Image" />
+                </div>
+                <button @click="likePost(postId)">
+                    <img src="relatedFiles/likeButton.png" alt="like" />
+                </button>
+                <span class="likeCount">{{ post.likes }} likes</span>
+            </div>
+        </div>
     </div>
 
     <script type="module">

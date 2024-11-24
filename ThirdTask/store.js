@@ -107,6 +107,7 @@ const store = new Vuex.Store({
         getPost: (state) => (postId) => state.posts[postId],
         getAllPosts: (state) => state.posts,
     },
+    plugins: [createPersistedState()],
 });
 
 export default store;
