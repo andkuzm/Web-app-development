@@ -21,7 +21,6 @@
     </div>
 
     <div id="mainContent">
-        <button id="resetLikesButton">Reset Likes</button>
         <div id="postsFeed">
             <div v-for="(post, postId) in posts" :key="postId" class="post">
                 <div class="postUpperBar">
@@ -38,7 +37,9 @@
                 <span class="likeCount">{{ post.likes }} likes</span>
             </div>
         </div>
+        <button id="resetLikesButton">Reset Likes</button> <!-- Moved here -->
     </div>
+    
 
     <script type="module">
         import store from './store.js';
